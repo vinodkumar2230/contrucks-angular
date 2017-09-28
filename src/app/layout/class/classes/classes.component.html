@@ -1,0 +1,79 @@
+
+<table class="table table-striped table-responsive" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"
+    [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+    <thead>
+        <tr>
+            <th style="width: 5%">
+                <mfDefaultSorter [by]="title">Title</mfDefaultSorter>
+            </th>
+            <th style="width: 5%">
+                <mfDefaultSorter by="description">Description</mfDefaultSorter>
+            </th>
+            <th style="width: 5%">
+                <mfDefaultSorter by="estimatedbudget">Estimated Budget</mfDefaultSorter>
+            </th>
+           
+            <th style="width: 5%">
+                <mfDefaultSorter by="estimatedtime">Estimated Time</mfDefaultSorter>
+            </th>
+           
+           <th style="width: 5%">
+                <mfDefaultSorter by="loadtype">Load Type</mfDefaultSorter>
+            </th>
+           
+           <th style="width: 5%">
+                <mfDefaultSorter by="loadweight">Load Weight</mfDefaultSorter>
+            </th>
+           
+          
+           <th style="width: 5%">
+                <mfDefaultSorter by="pickup">Pickup Location</mfDefaultSorter>
+            </th>
+
+            <th style="width: 5%">
+                <mfDefaultSorter by="drop">Drop Location</mfDefaultSorter>
+            </th>
+           
+           
+
+            <th style="width: 5%">
+                <mfDefaultSorter by="starttime">StartDate</mfDefaultSorter>
+            </th>
+            <th style="width: 5%">
+                <mfDefaultSorter by="enddate">EndDate</mfDefaultSorter>
+            </th>
+           <th style="width: 5%">
+                <mfDefaultSorter by="trucktype">Truck Type</mfDefaultSorter>
+            </th>
+
+            <th style="width: 5%">
+                <mfDefaultSorter by="numoftrucks">Number of Trucks</mfDefaultSorter>
+            </th>
+           
+           
+            <!--<th colspan="5">
+                Filter by name:
+                <input class="form-control" [(ngModel)]="filterQuery" />
+            </th>-->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of data">
+            <td>{{post.class | uppercase}}</td>
+            <td>{{post.session}}</td>
+            <td>{{post.registrationDate}}</td>
+            <td>{{post.startDate}}</td>
+            <td>{{post.endDate}}</td>
+            <td>{{post.startTime}}</td>
+            <td>{{post.endTime}}</td>
+            <td>{{post.category}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>
